@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Buku Afiza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff1f5, #ffe4e6);
+  color:#4a2c2a;
+}
+
+/* HILANGKAN FOCUS/OUTLINE DI SEMUA INTERAKSI */
+a, button, .btn, .jump-btn, .chapter-list a{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ANIMASI DASAR SEMUA TOMBOL */
+.btn, .jump-btn, .chapter-list a{
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER / TAP EFFECT */
+.btn:hover,
+.jump-btn:hover,
+.chapter-list a:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(190, 24, 93, 0.25);
+}
+
+/* ACTIVE (SAAT DIKLIK) */
+.btn:active,
+.jump-btn:active,
+.chapter-list a:active{
+  transform: scale(0.96);
+}
+
+/* EFFECT GLASS RING HALUS */
+.btn::after,
+.jump-btn::after,
+.chapter-list a::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:rgba(244,114,182,0.25);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity:0;
+}
+
+.btn:active::after,
+.jump-btn:active::after,
+.chapter-list a:active::after{
+  width:200%;
+  height:200%;
+  opacity:1;
+}
+
+/* JUDUL LUAR */
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  margin-top:20px;
+  color:#be185d;
+}
+
+.section-subtitle{
+  text-align:center;
+  font-size:13px;
+  margin-top:5px;
+  margin-bottom:10px;
+  color:#9ca3af;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.title{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  text-align:center;
+  margin-bottom:15px;
+  color:#be185d;
+}
+
+.card-subtitle{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  margin-bottom:10px;
+}
+
+.content{
+  min-height:200px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.dalil{
+  margin-top:15px;
+  background:#fff0f3;
+  border-left:4px solid #f472b6;
+  padding:15px;
+  border-radius:10px;
+  font-style:italic;
+}
+
+.meaning{
+  margin-top:15px;
+  font-size:14px;
+  color:#6b4c4c;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+}
+
+.btn{
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  background:#ffffff;
+  color:#be185d;
+  border:1px solid #f9a8d4;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.jump-btn{
+  display:block;
+  margin-top:12px;
+  text-align:center;
+  font-size:12px;
+  padding:8px;
+  border-radius:20px;
+  background:#fff;
+  border:1px dashed #f472b6;
+  color:#be185d;
+  text-decoration:none;
+}
+
+.chapter-list{
+  display:none;
+  margin-top:10px;
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-list a{
+  display:block;
+  padding:8px;
+  font-size:12px;
+  text-decoration:none;
+  color:#be185d;
+  border-radius:8px;
+}
+
+.chapter-list a.active{
+  background:#f472b6;
+  color:white;
+  font-weight:600;
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  margin-top:15px;
+  color:#a78b8b;
+}
+
+.legal-footer{
+  text-align:center;
+  font-size:10.5px;
+  color:#8b5e5e;
+  margin-top:18px;
+  line-height:1.6;
+  padding-top:10px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section-title">
+  📘 Buku Afiza Azzahra
+</div>
+
+
+<div class="section-subtitle">
+  Pesan cinta seorang ayah yang akan selalu menemanimu dalam setiap langkah hidup
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="title">Untukmu, dari Ayah</div>
+
+<div class="card-subtitle">
+  Sebuah pesan yang ditulis bukan hanya dengan kata, tapi dengan cinta yang tidak akan pernah hilang
+</div>
+
+<div class="content">
+
+  Afiza… kalau suatu hari kamu membaca ini…<br><br>
+
+  mungkin Ayah tidak selalu ada di sampingmu.<br>
+  mungkin kamu sedang sendiri…<br>
+  mungkin kamu sedang bingung…<br>
+  atau sedang mencari arah dalam hidupmu…<br><br>
+
+  Dan di saat itu…<br>
+  mungkin kamu hanya punya tulisan ini untuk kamu baca pelan-pelan.<br><br>
+
+  Tapi ketahuilah…<br><br>
+
+  setiap kata dalam buku ini bukan sekadar tulisan.<br><br>
+
+  Ini adalah cinta Ayah…<br>
+  yang dititipkan lewat kalimat-kalimat sederhana.<br><br>
+
+  Ayah mungkin tidak selalu bisa menjelaskan semuanya dengan sempurna…<br>
+  tidak selalu tahu bagaimana caranya membuatmu selalu bahagia…<br><br>
+
+  Tapi Ayah selalu ingin kamu baik-baik saja.<br><br>
+
+  Ayah ingin kamu kuat…<br>
+  tapi tetap lembut.<br><br>
+
+  Ayah ingin kamu tumbuh…<br>
+  tapi tetap dekat dengan Allah.<br><br>
+
+  Ayah ingin kamu bahagia…<br>
+  bukan hanya di dunia…<br>
+  tapi juga di akhirat nanti.<br><br>
+
+  Kalau suatu hari kamu merasa sendiri…<br>
+  ingatlah…<br><br>
+
+  kamu tidak benar-benar sendiri.<br><br>
+
+  Ada Allah yang selalu dekat…<br>
+  dan ada doa Ayah yang tidak pernah berhenti untukmu.<br><br>
+
+  Bahkan ketika Ayah tidak terlihat…<br>
+  cinta Ayah tetap ada…<br>
+  diam-diam menjaga, dan terus mendoakanmu.<br><br>
+
+  Dan satu hal yang Ayah harapkan…<br><br>
+
+  jangan pernah jauh dari Allah.<br><br>
+
+  Karena hanya dengan itulah…<br>
+  hidupmu akan benar-benar terjaga.<br><br>
+
+</div>
+
+<div class="dalil">
+
+  ﴿ وَقُل رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا ﴾<br>
+  (QS. Al-Isra’: 24)<br><br>
+
+  <b>Arti:</b><br>
+  Dan ucapkanlah: “Wahai Tuhanku, sayangilah keduanya (orang tuaku) sebagaimana mereka telah menyayangiku di waktu kecil.”<br><br>
+
+  <b>Makna:</b><br>
+  Ayat ini mengajarkan bahwa orang tua memiliki kasih sayang yang besar sejak kita kecil,<br>
+  dan sebagai anak, kita diajarkan untuk selalu mendoakan mereka dengan penuh cinta dan hormat.
+
+</div>
+
+<div class="meaning">
+
+  Dari ayat ini kita belajar bahwa hubungan antara anak dan orang tua adalah hubungan yang penuh cinta dan doa.<br><br>
+
+  Orang tua mungkin tidak selalu sempurna,<br>
+  tapi kasih sayangnya sering kali tidak terlihat, namun sangat dalam.<br><br>
+
+  Maka maknanya untuk Afiza adalah:<br><br>
+
+  Ingatlah selalu kebaikan orang tuamu…<br>
+  doakan mereka…<br>
+  dan hargai setiap usaha yang mereka lakukan untukmu.<br><br>
+
+  Karena doa seorang anak untuk orang tuanya…<br>
+  adalah salah satu bentuk cinta yang paling indah.<br><br>
+
+  Dan bagi seorang ayah…<br>
+  tidak ada kebahagiaan yang lebih besar,<br>
+  selain melihat anaknya tumbuh dalam kebaikan dan dekat dengan Allah.
+
+</div>
+
+    <!-- NAV -->
+<div class="nav" style="justify-content: space-between;">
+  <a href="index25.html" class="btn">⬅ Sebelumnya</a>
+  <a href="index27.html" class="btn">Selanjutnya ➡</a>
+</div>
+
+    <a href="javascript:void(0)" class="jump-btn" onclick="toggleMenu()">
+      📖 Lompat ke Halaman
+    </a>
+
+    <div class="chapter-list" id="menu">
+  <a href="index.html">Pengantar</a>
+  <a href="index1.html">Aku Diciptakan oleh Allah</a>
+  <a href="index2.html">Aku Perempuan, dan Itu Kemuliaan</a>
+  <a href="index3.html">Menjaga Diri adalah Cinta pada Diri</a>
+  <a href="index4.html">Percaya Diri Tanpa Sombong</a>
+  <a href="index5.html">Tidak Bergantung pada Penilaian Orang</a>
+
+  <a href="index6.html">Memilih Teman Itu Penting</a>
+  <a href="index7.html">Tidak Harus Ikut Semua Orang</a>
+  <a href="index8.html">Menjaga Batasan dengan Lawan Jenis</a>
+  <a href="index9.html">Lingkungan Membentuk Dirimu</a>
+  <a href="index10.html">Menjaga Kehormatan di Dunia Digital</a>
+
+  <a href="index11.html">Hati Itu Mudah Berubah</a>
+  <a href="index12.html">Cinta Itu Fitrah, Tapi Harus Dijaga</a>
+  <a href="index13.html">Jangan Memberikan Hatimu Sembarangan</a>
+  <a href="index14.html">Luka Itu Bukan Akhir</a>
+  <a href="index15.html">Sabar Itu Kekuatan</a>
+
+  <a href="index16.html">Shalat adalah Tempat Kembali</a>
+  <a href="index17.html">Allah Selalu Dekat</a>
+  <a href="index18.html">Doa Itu Kekuatan</a>
+  <a href="index19.html">Jangan Menjauh Saat Berdosa</a>
+  <a href="index20.html">Tujuan Hidup adalah Allah</a>
+
+  <a href="index21.html">Kamu Punya Masa Depan</a>
+  <a href="index22.html">Bermimpi Itu Boleh</a>
+  <a href="index23.html">Ikhtiar dan Tawakal</a>
+  <a href="index24.html">Tidak Semua Sesuai Rencana</a>
+  <a href="index25.html">Akhir yang Baik Adalah Tujuan Terbesar</a>
+
+  <a href="index26.html" class="active">Untukmu, dari Ayah</a>
+  <a href="index27.html">Ayah Tidak Sempurna</a>
+  <a href="index28.html">Doa Ayah Selalu Untukmu</a>
+  <a href="index29.html">Jika Suatu Hari Kamu Jauh</a>
+  <a href="index30.html">Harapan Terbesar Ayah</a>
+</div>
+
+    <div class="footer">
+      Buku untuk Afiza 🤍
+    </div>
+
+    <div class="legal-footer">
+      © 2026 Karya pribadi oleh <b>Zulfahmi Afnula</b><br>
+      Disusun sebagai amanah seorang ayah dalam memberi nasihat kepada anaknya.<br>
+      <i>All Rights Reserved</i>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
