@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Buku Afiza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff1f5, #ffe4e6);
+  color:#4a2c2a;
+}
+
+/* HILANGKAN FOCUS/OUTLINE DI SEMUA INTERAKSI */
+a, button, .btn, .jump-btn, .chapter-list a{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ANIMASI DASAR SEMUA TOMBOL */
+.btn, .jump-btn, .chapter-list a{
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER / TAP EFFECT */
+.btn:hover,
+.jump-btn:hover,
+.chapter-list a:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(190, 24, 93, 0.25);
+}
+
+/* ACTIVE (SAAT DIKLIK) */
+.btn:active,
+.jump-btn:active,
+.chapter-list a:active{
+  transform: scale(0.96);
+}
+
+/* EFFECT GLASS RING HALUS */
+.btn::after,
+.jump-btn::after,
+.chapter-list a::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:rgba(244,114,182,0.25);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity:0;
+}
+
+.btn:active::after,
+.jump-btn:active::after,
+.chapter-list a:active::after{
+  width:200%;
+  height:200%;
+  opacity:1;
+}
+
+/* JUDUL LUAR */
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  margin-top:20px;
+  color:#be185d;
+}
+
+.section-subtitle{
+  text-align:center;
+  font-size:13px;
+  margin-top:5px;
+  margin-bottom:10px;
+  color:#9ca3af;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.title{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  text-align:center;
+  margin-bottom:15px;
+  color:#be185d;
+}
+
+.card-subtitle{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  margin-bottom:10px;
+}
+
+.content{
+  min-height:200px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.dalil{
+  margin-top:15px;
+  background:#fff0f3;
+  border-left:4px solid #f472b6;
+  padding:15px;
+  border-radius:10px;
+  font-style:italic;
+}
+
+.meaning{
+  margin-top:15px;
+  font-size:14px;
+  color:#6b4c4c;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+}
+
+.btn{
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  background:#ffffff;
+  color:#be185d;
+  border:1px solid #f9a8d4;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.jump-btn{
+  display:block;
+  margin-top:12px;
+  text-align:center;
+  font-size:12px;
+  padding:8px;
+  border-radius:20px;
+  background:#fff;
+  border:1px dashed #f472b6;
+  color:#be185d;
+  text-decoration:none;
+}
+
+.chapter-list{
+  display:none;
+  margin-top:10px;
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-list a{
+  display:block;
+  padding:8px;
+  font-size:12px;
+  text-decoration:none;
+  color:#be185d;
+  border-radius:8px;
+}
+
+.chapter-list a.active{
+  background:#f472b6;
+  color:white;
+  font-weight:600;
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  margin-top:15px;
+  color:#a78b8b;
+}
+
+.legal-footer{
+  text-align:center;
+  font-size:10.5px;
+  color:#8b5e5e;
+  margin-top:18px;
+  line-height:1.6;
+  padding-top:10px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section-title">
+  📘 Buku Afiza Azzahra
+</div>
+
+
+<div class="section-subtitle">
+  Mengarahkan mimpi agar tidak hanya tinggi, tapi juga bernilai di hadapan Allah
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="title">Bermimpi Itu Boleh</div>
+
+<div class="card-subtitle">
+  Mimpi yang indah bukan hanya tentang dunia, tapi tentang jalan menuju kebaikan dan ridha Allah
+</div>
+
+<div class="content">
+
+  Afiza… kamu boleh bermimpi.<br><br>
+
+  Bahkan… kamu boleh bermimpi setinggi mungkin.<br><br>
+
+  Kamu boleh ingin menjadi seseorang yang hebat…<br>
+  seseorang yang berhasil…<br>
+  seseorang yang membuat bangga orang-orang di sekitarmu.<br><br>
+
+  Itu bukan sesuatu yang salah.<br><br>
+
+  Justru mimpi adalah tanda bahwa kamu punya harapan dalam hidup.<br><br>
+
+  Tapi ada satu hal yang harus kamu jaga…<br><br>
+
+  Jangan sampai mimpimu hanya berhenti pada dunia.<br><br>
+
+  Karena sebesar apa pun mimpi di dunia…<br>
+  semua itu akan berakhir.<br><br>
+
+  Harta bisa hilang.<br>
+  jabatan bisa selesai.<br>
+  pujian manusia bisa berubah.<br><br>
+
+  Tapi kebaikan yang kamu lakukan karena Allah…<br>
+  tidak akan pernah hilang.<br><br>
+
+  Maka jadikan mimpimu bukan hanya tentang “menjadi siapa”…<br>
+  tapi juga tentang “menjadi bagaimana”.<br><br>
+
+  Menjadi orang yang dekat dengan Allah.<br>
+  Menjadi orang yang membawa manfaat.<br>
+  Menjadi orang yang menjaga kebaikan dalam setiap langkahnya.<br><br>
+
+  Kamu boleh mengejar dunia…<br>
+  tapi jangan lupa arah hatimu.<br><br>
+
+  Karena mimpi yang paling indah…<br>
+  bukan yang hanya membuatmu tinggi di mata manusia…<br><br>
+
+  Tapi yang membuatmu mulia di hadapan Allah.<br><br>
+
+</div>
+
+<div class="dalil">
+
+  ﴿ فَاسْتَبِقُوا الْخَيْرَاتِ ﴾<br>
+  (QS. Al-Baqarah: 148)<br><br>
+
+  <b>Arti:</b><br>
+  Maka berlomba-lombalah dalam kebaikan.<br><br>
+
+  <b>Makna:</b><br>
+  Ayat ini mengajarkan bahwa tujuan terbaik dalam hidup bukan sekadar mencapai dunia,<br>
+  tetapi berlomba dalam melakukan kebaikan yang diridhai oleh Allah.
+
+</div>
+
+<div class="meaning">
+
+  Dari ayat ini kita belajar bahwa arah hidup yang benar adalah menuju kebaikan.<br><br>
+
+  Maka mimpi yang baik bukan hanya tentang keberhasilan dunia,<br>
+  tapi tentang bagaimana kita semakin dekat kepada Allah melalui apa yang kita capai.<br><br>
+
+  Maknanya untuk Afiza adalah:<br><br>
+
+  Silakan bermimpi setinggi mungkin,<br>
+  tapi pastikan mimpimu membawamu kepada kebaikan.<br><br>
+
+  Karena ketika mimpimu terhubung dengan Allah,<br>
+  maka perjalananmu akan selalu memiliki nilai,<br>
+  dan hasilnya akan membawa keberkahan dalam hidupmu.
+
+</div>
+
+    <!-- NAV -->
+<div class="nav" style="justify-content: space-between;">
+  <a href="index21.html" class="btn">⬅ Sebelumnya</a>
+  <a href="index23.html" class="btn">Selanjutnya ➡</a>
+</div>
+
+    <a href="javascript:void(0)" class="jump-btn" onclick="toggleMenu()">
+      📖 Lompat ke Halaman
+    </a>
+
+    <div class="chapter-list" id="menu">
+  <a href="index.html">Pengantar</a>
+  <a href="index1.html">Aku Diciptakan oleh Allah</a>
+  <a href="index2.html">Aku Perempuan, dan Itu Kemuliaan</a>
+  <a href="index3.html">Menjaga Diri adalah Cinta pada Diri</a>
+  <a href="index4.html">Percaya Diri Tanpa Sombong</a>
+  <a href="index5.html">Tidak Bergantung pada Penilaian Orang</a>
+
+  <a href="index6.html">Memilih Teman Itu Penting</a>
+  <a href="index7.html">Tidak Harus Ikut Semua Orang</a>
+  <a href="index8.html">Menjaga Batasan dengan Lawan Jenis</a>
+  <a href="index9.html">Lingkungan Membentuk Dirimu</a>
+  <a href="index10.html">Menjaga Kehormatan di Dunia Digital</a>
+
+  <a href="index11.html">Hati Itu Mudah Berubah</a>
+  <a href="index12.html">Cinta Itu Fitrah, Tapi Harus Dijaga</a>
+  <a href="index13.html">Jangan Memberikan Hatimu Sembarangan</a>
+  <a href="index14.html">Luka Itu Bukan Akhir</a>
+  <a href="index15.html">Sabar Itu Kekuatan</a>
+
+  <a href="index16.html">Shalat adalah Tempat Kembali</a>
+  <a href="index17.html">Allah Selalu Dekat</a>
+  <a href="index18.html">Doa Itu Kekuatan</a>
+  <a href="index19.html">Jangan Menjauh Saat Berdosa</a>
+  <a href="index20.html">Tujuan Hidup adalah Allah</a>
+
+  <a href="index21.html">Kamu Punya Masa Depan</a>
+  <a href="index22.html" class="active">Bermimpi Itu Boleh</a>
+  <a href="index23.html">Ikhtiar dan Tawakal</a>
+  <a href="index24.html">Tidak Semua Sesuai Rencana</a>
+  <a href="index25.html">Akhir yang Baik Adalah Tujuan Terbesar</a>
+
+  <a href="index26.html">Untukmu, dari Ayah</a>
+  <a href="index27.html">Ayah Tidak Sempurna</a>
+  <a href="index28.html">Doa Ayah Selalu Untukmu</a>
+  <a href="index29.html">Jika Suatu Hari Kamu Jauh</a>
+  <a href="index30.html">Harapan Terbesar Ayah</a>
+</div>
+
+    <div class="footer">
+      Buku untuk Afiza 🤍
+    </div>
+
+    <div class="legal-footer">
+      © 2026 Karya pribadi oleh <b>Zulfahmi Afnula</b><br>
+      Disusun sebagai amanah seorang ayah dalam memberi nasihat kepada anaknya.<br>
+      <i>All Rights Reserved</i>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
