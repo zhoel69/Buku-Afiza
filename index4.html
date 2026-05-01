@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Buku Afiza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff1f5, #ffe4e6);
+  color:#4a2c2a;
+}
+
+/* HILANGKAN FOCUS/OUTLINE DI SEMUA INTERAKSI */
+a, button, .btn, .jump-btn, .chapter-list a{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ANIMASI DASAR SEMUA TOMBOL */
+.btn, .jump-btn, .chapter-list a{
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER / TAP EFFECT */
+.btn:hover,
+.jump-btn:hover,
+.chapter-list a:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(190, 24, 93, 0.25);
+}
+
+/* ACTIVE (SAAT DIKLIK) */
+.btn:active,
+.jump-btn:active,
+.chapter-list a:active{
+  transform: scale(0.96);
+}
+
+/* EFFECT GLASS RING HALUS */
+.btn::after,
+.jump-btn::after,
+.chapter-list a::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:rgba(244,114,182,0.25);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity:0;
+}
+
+.btn:active::after,
+.jump-btn:active::after,
+.chapter-list a:active::after{
+  width:200%;
+  height:200%;
+  opacity:1;
+}
+
+/* JUDUL LUAR */
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  margin-top:20px;
+  color:#be185d;
+}
+
+.section-subtitle{
+  text-align:center;
+  font-size:13px;
+  margin-top:5px;
+  margin-bottom:10px;
+  color:#9ca3af;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.title{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  text-align:center;
+  margin-bottom:15px;
+  color:#be185d;
+}
+
+.card-subtitle{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  margin-bottom:10px;
+}
+
+.content{
+  min-height:200px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.dalil{
+  margin-top:15px;
+  background:#fff0f3;
+  border-left:4px solid #f472b6;
+  padding:15px;
+  border-radius:10px;
+  font-style:italic;
+}
+
+.meaning{
+  margin-top:15px;
+  font-size:14px;
+  color:#6b4c4c;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+}
+
+.btn{
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  background:#ffffff;
+  color:#be185d;
+  border:1px solid #f9a8d4;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.jump-btn{
+  display:block;
+  margin-top:12px;
+  text-align:center;
+  font-size:12px;
+  padding:8px;
+  border-radius:20px;
+  background:#fff;
+  border:1px dashed #f472b6;
+  color:#be185d;
+  text-decoration:none;
+}
+
+.chapter-list{
+  display:none;
+  margin-top:10px;
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-list a{
+  display:block;
+  padding:8px;
+  font-size:12px;
+  text-decoration:none;
+  color:#be185d;
+  border-radius:8px;
+}
+
+.chapter-list a.active{
+  background:#f472b6;
+  color:white;
+  font-weight:600;
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  margin-top:15px;
+  color:#a78b8b;
+}
+
+.legal-footer{
+  text-align:center;
+  font-size:10.5px;
+  color:#8b5e5e;
+  margin-top:18px;
+  line-height:1.6;
+  padding-top:10px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section-title">
+  📘 Buku Afiza Azzahra
+</div>
+
+
+<div class="section-subtitle">
+  Belajar Menghargai Diri dalam Islam
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="title">Percaya Diri Tanpa Sombong</div>
+
+<div class="card-subtitle">
+  Kamu boleh percaya diri, tapi tetap harus rendah hati
+</div>
+
+<div class="content">
+
+  Afiza… kamu boleh percaya diri dan tahu kalau kamu punya nilai dalam hidup ini.<br><br>
+
+  Tidak apa-apa merasa bahwa kamu bisa, kamu berharga, dan kamu punya kelebihan.<br><br>
+
+  Itu hal yang baik, selama tidak membuatmu merasa lebih tinggi dari orang lain.<br><br>
+
+  Karena percaya diri itu sehat, tapi sombong itu berbahaya.<br><br>
+
+  Sombong bisa membuat seseorang lupa bahwa semua yang ia punya berasal dari Allah.<br><br>
+
+  Maka jangan pernah merasa lebih baik hanya karena rupa, kemampuan, atau penilaian manusia.<br><br>
+
+  Karena semua itu bisa berubah kapan saja.<br><br>
+
+  Yang benar-benar membuat seseorang mulia bukan penampilan atau popularitasnya, tapi bagaimana hatinya tetap taat kepada Allah.<br><br>
+
+  Jadi tetaplah percaya diri, tapi jaga hatimu agar tetap rendah hati dan tidak meremehkan orang lain.
+
+</div>
+
+<div class="dalil">
+
+  ﴿ إِنَّ أَكْرَمَكُمْ عِندَ اللَّهِ أَتْقَاكُمْ ﴾<br>
+  (QS. Al-Hujurat: 13)<br><br>
+
+  📖 Arti:<br>
+  Sesungguhnya orang yang paling mulia di sisi Allah adalah orang yang paling bertakwa.<br><br>
+
+  👉 Makna:<br>
+  Allah tidak melihat manusia dari wajahnya, hartanya, atau kedudukannya, tetapi dari ketakwaannya kepada Allah. Semakin seseorang dekat kepada Allah, semakin tinggi derajatnya di sisi-Nya.
+
+</div>
+
+<div class="meaning">
+
+  Dari ayat ini kita belajar bahwa ukuran kemuliaan seseorang bukan dari dunia, tapi dari hubungannya dengan Allah.<br><br>
+
+  Orang yang bertakwa adalah orang yang paling dihargai oleh Allah, walaupun mungkin tidak dikenal banyak orang.<br><br>
+
+  Maka percaya diri itu boleh, tapi jangan sampai membuat hati menjadi sombong.<br><br>
+
+  Karena yang paling penting bukan terlihat hebat di depan manusia, tapi menjadi baik di sisi Allah.
+
+</div>
+
+    <!-- NAV -->
+<div class="nav" style="justify-content: space-between;">
+  <a href="index3.html" class="btn">⬅ Sebelumnya</a>
+  <a href="index5.html" class="btn">Selanjutnya ➡</a>
+</div>
+
+    <a href="javascript:void(0)" class="jump-btn" onclick="toggleMenu()">
+      📖 Lompat ke Halaman
+    </a>
+
+    <div class="chapter-list" id="menu">
+  <a href="index.html">Pengantar</a>
+  <a href="index1.html">Aku Diciptakan oleh Allah</a>
+  <a href="index2.html">Aku Perempuan, dan Itu Kemuliaan</a>
+  <a href="index3.html">Menjaga Diri adalah Cinta pada Diri</a>
+  <a href="index4.html" class="active">Percaya Diri Tanpa Sombong</a>
+  <a href="index5.html">Tidak Bergantung pada Penilaian Orang</a>
+</div>
+
+    <div class="footer">
+      Buku untuk Afiza 🤍
+    </div>
+
+    <div class="legal-footer">
+      © 2026 Karya pribadi oleh <b>Zulfahmi Afnula</b><br>
+      Disusun sebagai amanah seorang ayah dalam memberi nasihat kepada anaknya.<br>
+      <i>All Rights Reserved</i>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
