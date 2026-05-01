@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Buku Afiza</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff1f5, #ffe4e6);
+  color:#4a2c2a;
+}
+
+/* HILANGKAN FOCUS/OUTLINE DI SEMUA INTERAKSI */
+a, button, .btn, .jump-btn, .chapter-list a{
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ANIMASI DASAR SEMUA TOMBOL */
+.btn, .jump-btn, .chapter-list a{
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER / TAP EFFECT */
+.btn:hover,
+.jump-btn:hover,
+.chapter-list a:hover{
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(190, 24, 93, 0.25);
+}
+
+/* ACTIVE (SAAT DIKLIK) */
+.btn:active,
+.jump-btn:active,
+.chapter-list a:active{
+  transform: scale(0.96);
+}
+
+/* EFFECT GLASS RING HALUS */
+.btn::after,
+.jump-btn::after,
+.chapter-list a::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  background:rgba(244,114,182,0.25);
+  border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+  opacity:0;
+}
+
+.btn:active::after,
+.jump-btn:active::after,
+.chapter-list a:active::after{
+  width:200%;
+  height:200%;
+  opacity:1;
+}
+
+/* JUDUL LUAR */
+.section-title{
+  text-align:center;
+  font-family:'Playfair Display', serif;
+  font-size:26px;
+  margin-top:20px;
+  color:#be185d;
+}
+
+.section-subtitle{
+  text-align:center;
+  font-size:13px;
+  margin-top:5px;
+  margin-bottom:10px;
+  color:#9ca3af;
+}
+
+.container{
+  max-width:500px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#ffffffcc;
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.title{
+  font-family:'Playfair Display', serif;
+  font-size:22px;
+  text-align:center;
+  margin-bottom:15px;
+  color:#be185d;
+}
+
+.card-subtitle{
+  text-align:center;
+  font-size:12px;
+  color:#9ca3af;
+  margin-bottom:10px;
+}
+
+.content{
+  min-height:200px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.dalil{
+  margin-top:15px;
+  background:#fff0f3;
+  border-left:4px solid #f472b6;
+  padding:15px;
+  border-radius:10px;
+  font-style:italic;
+}
+
+.meaning{
+  margin-top:15px;
+  font-size:14px;
+  color:#6b4c4c;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
+}
+
+.btn{
+  font-size:12px;
+  padding:6px 12px;
+  border-radius:20px;
+  text-decoration:none;
+  background:#ffffff;
+  color:#be185d;
+  border:1px solid #f9a8d4;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.jump-btn{
+  display:block;
+  margin-top:12px;
+  text-align:center;
+  font-size:12px;
+  padding:8px;
+  border-radius:20px;
+  background:#fff;
+  border:1px dashed #f472b6;
+  color:#be185d;
+  text-decoration:none;
+}
+
+.chapter-list{
+  display:none;
+  margin-top:10px;
+  background:#fff;
+  border-radius:12px;
+  padding:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.chapter-list a{
+  display:block;
+  padding:8px;
+  font-size:12px;
+  text-decoration:none;
+  color:#be185d;
+  border-radius:8px;
+}
+
+.chapter-list a.active{
+  background:#f472b6;
+  color:white;
+  font-weight:600;
+}
+
+.footer{
+  text-align:center;
+  font-size:11px;
+  margin-top:15px;
+  color:#a78b8b;
+}
+
+.legal-footer{
+  text-align:center;
+  font-size:10.5px;
+  color:#8b5e5e;
+  margin-top:18px;
+  line-height:1.6;
+  padding-top:10px;
+  border-top:1px solid rgba(0,0,0,0.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="section-title">
+  📘 Buku Afiza Azzahra
+</div>
+
+
+<div class="section-subtitle">
+  Memahami bahwa doa adalah kekuatan besar yang menghubungkan hati dengan Allah
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="title">Doa Itu Kekuatan</div>
+
+<div class="card-subtitle">
+  Doa bukan sekadar kata-kata, tapi harapan yang Allah dengar dan jawab dengan cara terbaik
+</div>
+
+<div class="content">
+
+  Afiza… jangan pernah meremehkan doa.<br><br>
+
+  Mungkin terlihat sederhana…<br>
+  hanya kata-kata…<br>
+  hanya permintaan…<br><br>
+
+  Tapi di sisi Allah,<br>
+  doa adalah sesuatu yang sangat besar.<br><br>
+
+  Doa bisa menguatkan hati yang lemah.<br>
+  Doa bisa menenangkan jiwa yang gelisah.<br>
+  Bahkan doa bisa mengubah hal yang terlihat tidak mungkin.<br><br>
+
+  Ada hal-hal dalam hidup yang tidak bisa kamu kendalikan.<br><br>
+
+  Ada keadaan yang di luar kemampuanmu.<br>
+  Ada keinginan yang tidak bisa kamu wujudkan sendiri.<br><br>
+
+  Di situlah doa menjadi kekuatanmu.<br><br>
+
+  Kamu menyerahkan yang tidak mampu kamu pegang…<br>
+  kepada Allah yang Maha Kuasa atas segalanya.<br><br>
+
+  Kadang kamu sudah berdoa…<br>
+  tapi belum melihat hasilnya.<br><br>
+
+  Kadang kamu merasa…<br>
+  “Kenapa belum dikabulkan?”<br><br>
+
+  Tapi ketahuilah…<br>
+  Allah tidak pernah mengabaikan doa.<br><br>
+
+  Jika belum dikabulkan sekarang,<br>
+  bukan berarti ditolak.<br><br>
+
+  Bisa jadi Allah sedang menyiapkan waktu yang lebih tepat.<br>
+  Atau menggantinya dengan sesuatu yang lebih baik.<br>
+  Atau menjagamu dari sesuatu yang tidak kamu ketahui.<br><br>
+
+  Doa itu tidak pernah sia-sia.<br><br>
+
+  Setiap doa didengar.<br>
+  Setiap doa dicatat.<br>
+  Setiap doa dijawab… dengan cara terbaik menurut Allah.<br><br>
+
+  Maka jangan berhenti berdoa.<br><br>
+
+  Bahkan saat kamu lelah…<br>
+  bahkan saat kamu ragu…<br>
+  bahkan saat kamu merasa tidak pantas…<br><br>
+
+  Tetaplah berdoa.<br><br>
+
+  Karena di situlah kekuatanmu.<br>
+  Di situlah harapanmu hidup.<br>
+  Dan di situlah hubunganmu dengan Allah menjadi semakin dekat.
+
+</div>
+
+<div class="dalil">
+
+  ﴿ ادْعُونِي أَسْتَجِبْ لَكُمْ ﴾<br>
+  (QS. Ghafir: 60)<br><br>
+
+  <b>Arti:</b><br>
+  Berdoalah kepada-Ku, niscaya Aku akan mengabulkan (doa) kalian.<br><br>
+
+  <b>Makna:</b><br>
+  Ayat ini adalah janji dari Allah bahwa setiap doa hamba-Nya tidak akan diabaikan.<br><br>
+  Allah mendengar semua doa dan akan menjawabnya dengan cara yang paling baik menurut hikmah-Nya.
+
+</div>
+
+<div class="meaning">
+
+  Dari ayat ini kita belajar bahwa doa adalah bentuk ketergantungan kita kepada Allah.<br><br>
+
+  Semakin seseorang berdoa,<br>
+  semakin ia menunjukkan bahwa ia membutuhkan Allah.<br><br>
+
+  Dan Allah menyukai hamba yang datang kepada-Nya dengan doa.<br><br>
+
+  Maka jangan pernah putus dari doa.<br><br>
+
+  Karena doa bukan hanya tentang meminta,<br>
+  tapi tentang mendekatkan diri kepada Allah.<br><br>
+
+  Dan di situlah kekuatan sejati berada:<br>
+  ketika kamu berharap hanya kepada Allah, dan yakin bahwa Dia tidak akan pernah mengecewakanmu.
+
+</div>
+
+    <!-- NAV -->
+<div class="nav" style="justify-content: space-between;">
+  <a href="index17.html" class="btn">⬅ Sebelumnya</a>
+  <a href="index19.html" class="btn">Selanjutnya ➡</a>
+</div>
+
+    <a href="javascript:void(0)" class="jump-btn" onclick="toggleMenu()">
+      📖 Lompat ke Halaman
+    </a>
+
+    <div class="chapter-list" id="menu">
+  <a href="index.html">Pengantar</a>
+  <a href="index1.html">Aku Diciptakan oleh Allah</a>
+  <a href="index2.html">Aku Perempuan, dan Itu Kemuliaan</a>
+  <a href="index3.html">Menjaga Diri adalah Cinta pada Diri</a>
+  <a href="index4.html">Percaya Diri Tanpa Sombong</a>
+  <a href="index5.html">Tidak Bergantung pada Penilaian Orang</a>
+
+  <a href="index6.html">Memilih Teman Itu Penting</a>
+  <a href="index7.html">Tidak Harus Ikut Semua Orang</a>
+  <a href="index8.html">Menjaga Batasan dengan Lawan Jenis</a>
+  <a href="index9.html">Lingkungan Membentuk Dirimu</a>
+  <a href="index10.html">Menjaga Kehormatan di Dunia Digital</a>
+
+  <a href="index11.html">Hati Itu Mudah Berubah</a>
+  <a href="index12.html">Cinta Itu Fitrah, Tapi Harus Dijaga</a>
+  <a href="index13.html">Jangan Memberikan Hatimu Sembarangan</a>
+  <a href="index14.html">Luka Itu Bukan Akhir</a>
+  <a href="index15.html">Sabar Itu Kekuatan</a>
+
+  <a href="index16.html">Shalat adalah Tempat Kembali</a>
+  <a href="index17.html">Allah Selalu Dekat</a>
+  <a href="index18.html" class="active">Doa Itu Kekuatan</a>
+  <a href="index19.html">Jangan Menjauh Saat Berdosa</a>
+  <a href="index20.html">Tujuan Hidup adalah Allah</a>
+
+  <a href="index21.html">Kamu Punya Masa Depan</a>
+  <a href="index22.html">Bermimpi Itu Boleh</a>
+  <a href="index23.html">Ikhtiar dan Tawakal</a>
+  <a href="index24.html">Tidak Semua Sesuai Rencana</a>
+  <a href="index25.html">Akhir yang Baik Adalah Tujuan Terbesar</a>
+
+  <a href="index26.html">Untukmu, dari Ayah</a>
+  <a href="index27.html">Ayah Tidak Sempurna</a>
+  <a href="index28.html">Doa Ayah Selalu Untukmu</a>
+  <a href="index29.html">Jika Suatu Hari Kamu Jauh</a>
+  <a href="index30.html">Harapan Terbesar Ayah</a>
+</div>
+
+    <div class="footer">
+      Buku untuk Afiza 🤍
+    </div>
+
+    <div class="legal-footer">
+      © 2026 Karya pribadi oleh <b>Zulfahmi Afnula</b><br>
+      Disusun sebagai amanah seorang ayah dalam memberi nasihat kepada anaknya.<br>
+      <i>All Rights Reserved</i>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
